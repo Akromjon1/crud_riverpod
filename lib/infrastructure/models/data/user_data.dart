@@ -1,13 +1,13 @@
 class UserData {
   UserData({
     String? id,
-    String? createdDate,
+    String? createdAt,
     String? name,
     String? avatar,
 
   }) {
     _id = id;
-    _createdDate = createdDate;
+    _createdAt = createdAt;
     _name = name;
     _avatar = avatar;
 
@@ -15,27 +15,27 @@ class UserData {
 
   UserData.fromJson(dynamic json) {
     _id = json['id'];
-    _createdDate = json['createdDate'];
+    _createdAt = json['createdAt'];
     _name = json['name'];
     _avatar = json['avatar'];
   }
 
   String? _id;
-  String? _createdDate;
+  String? _createdAt;
   String? _name;
   String? _avatar;
 
 
   UserData copyWith({
     String? id,
-    String? createdDate,
+    String? createdAt,
     String? name,
     String? avatar,
 
   }) =>
       UserData(
         id: id ?? _id,
-        createdDate: createdDate ?? _createdDate,
+        createdAt: createdAt ?? _createdAt,
         name: name ?? _name,
         avatar: avatar ?? _avatar,
 
@@ -43,7 +43,7 @@ class UserData {
 
   String? get id => _id;
 
-  String? get createdDate => _createdDate;
+  String? get createdAt => _createdAt;
 
   String? get name => _name;
 
@@ -54,7 +54,7 @@ class UserData {
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['id'] = _id;
-    map['createdDate'] = _createdDate;
+    map['createdAt'] = _createdAt;
     map['name'] = _name;
     map['avatar'] = _avatar;
 

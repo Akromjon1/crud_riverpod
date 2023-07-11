@@ -14,7 +14,6 @@ class HttpService {
           },
         ),
       )
-        //..interceptors.add(TokenInterceptor(requireAuth: requireAuth,chatGPT: chatGpt))
         ..interceptors
             .add(LogInterceptor(requestBody: true, responseBody: true));
 }

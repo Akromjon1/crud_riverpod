@@ -1,25 +1,25 @@
-import 'user_response.dart';
+import 'package:crud_riverpod/infrastructure/models/data/user_data.dart';
+
 
 class UserListResponse {
-  UserListResponse({List<UserResponse>? data}) {
+  UserListResponse({List<UserData>? data}) {
     _data = data;
   }
 
   UserListResponse.fromJson(dynamic json) {
-    if (json['data'] != null) {
-      _data = [];
-      json['data'].forEach((v) {
-        _data?.add(UserResponse.fromJson(v));
-      });
+    if (json is List) {
+      _data = json.map((v) => UserData.fromJson(v)).toList();
+    }else{
+      null;
     }
   }
 
-  List<UserResponse>? _data;
+  List<UserData>? _data;
 
-  UserListResponse copyWith({List<UserResponse>? data}) =>
+  UserListResponse copyWith({List<UserData>? data}) =>
       UserListResponse(data: data ?? _data);
 
-  List<UserResponse>? get data => _data;
+  List<UserData>? get data => _data;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

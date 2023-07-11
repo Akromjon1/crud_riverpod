@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$MainState {
   bool get isLoading => throw _privateConstructorUsedError;
-  List<UserResponse> get userList => throw _privateConstructorUsedError;
+  List<UserData> get userList => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MainStateCopyWith<MainState> get copyWith =>
@@ -29,7 +29,7 @@ abstract class $MainStateCopyWith<$Res> {
   factory $MainStateCopyWith(MainState value, $Res Function(MainState) then) =
       _$MainStateCopyWithImpl<$Res, MainState>;
   @useResult
-  $Res call({bool isLoading, List<UserResponse> userList});
+  $Res call({bool isLoading, List<UserData> userList});
 }
 
 /// @nodoc
@@ -56,7 +56,7 @@ class _$MainStateCopyWithImpl<$Res, $Val extends MainState>
       userList: null == userList
           ? _value.userList
           : userList // ignore: cast_nullable_to_non_nullable
-              as List<UserResponse>,
+              as List<UserData>,
     ) as $Val);
   }
 }
@@ -68,7 +68,7 @@ abstract class _$$_MainStateCopyWith<$Res> implements $MainStateCopyWith<$Res> {
       __$$_MainStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isLoading, List<UserResponse> userList});
+  $Res call({bool isLoading, List<UserData> userList});
 }
 
 /// @nodoc
@@ -93,7 +93,7 @@ class __$$_MainStateCopyWithImpl<$Res>
       userList: null == userList
           ? _value._userList
           : userList // ignore: cast_nullable_to_non_nullable
-              as List<UserResponse>,
+              as List<UserData>,
     ));
   }
 }
@@ -102,17 +102,17 @@ class __$$_MainStateCopyWithImpl<$Res>
 
 class _$_MainState extends _MainState {
   const _$_MainState(
-      {this.isLoading = false, final List<UserResponse> userList = const []})
+      {this.isLoading = false, final List<UserData> userList = const []})
       : _userList = userList,
         super._();
 
   @override
   @JsonKey()
   final bool isLoading;
-  final List<UserResponse> _userList;
+  final List<UserData> _userList;
   @override
   @JsonKey()
-  List<UserResponse> get userList {
+  List<UserData> get userList {
     if (_userList is EqualUnmodifiableListView) return _userList;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_userList);
@@ -146,13 +146,13 @@ class _$_MainState extends _MainState {
 
 abstract class _MainState extends MainState {
   const factory _MainState(
-      {final bool isLoading, final List<UserResponse> userList}) = _$_MainState;
+      {final bool isLoading, final List<UserData> userList}) = _$_MainState;
   const _MainState._() : super._();
 
   @override
   bool get isLoading;
   @override
-  List<UserResponse> get userList;
+  List<UserData> get userList;
   @override
   @JsonKey(ignore: true)
   _$$_MainStateCopyWith<_$_MainState> get copyWith =>
